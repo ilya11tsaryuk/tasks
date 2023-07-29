@@ -15,7 +15,7 @@ const SelectFilter: React.FC<SelectFilterProps> = ({ filterTodo, defaultVal }) =
         Сделанные
       </option>
       <option key={3} value={"false"}>
-        Незаконченные
+        В процессе
       </option>
     </select>
   );

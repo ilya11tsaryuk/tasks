@@ -13,7 +13,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ completed, onCompleted }) => {
                 className={`appearance-none`}
             />
             {completed ?
-                <BsCheck2Square size={22} className="text-green-500" /> : <BiCheckbox size={22} className="text-gray-900" />
+                <BsCheck2Square size={22} className="text-green-500" /> : <BiCheckbox size={22} className="text-gray-500" />
             }
         </label>
     )

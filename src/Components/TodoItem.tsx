@@ -24,18 +24,18 @@ const TodoItem: React.FC<Task> = ({ id, action, completed }) => {
 
     return (
         <li
-            className={`flex my-4 p-3 rounded-lg ${isDarkTheme ? "" : "bg-lightSecondary"} justify-between`}
+            className={`flex my-4 p-3 rounded-lg ${isDarkTheme ? "bg-darkSecondary" : "bg-lightSecondary"} justify-between`}
             key={id} >
 
             <div className={`flex items-center`}>
                 <Checkbox onCompleted={onCompleted} completed={completed} />
-                <div className={`pl-2 border-l-2 ${completed ? "border-l-green-500 line-through" : "border-l-red-500"}`}>
+                <div className={`pl-2 border-l-2 ${completed ? "border-l-green-500 line-through" : "border-l-red-500"} ${isDarkTheme ? "text-lightSecondary" : "text-darkSecondary"}`}>
                     {action}
                 </div>
             </div>
 
             <button onClick={onDelete} >
-                <TiDeleteOutline className="opacity-60 text-lightPrimary" />
+                <TiDeleteOutline className={`opacity-60 ${isDarkTheme ? "text-darkPrimary" : "text-lightPrimary"}`} />
             </button>
 
         </li>

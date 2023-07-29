@@ -1,11 +1,13 @@
 import React, { ChangeEvent, KeyboardEvent, KeyboardEventHandler, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTask } from "../Redux/todoSlice";
 import {MdOutlineAddCircleOutline} from 'react-icons/md'
+import { getTheme } from "../Redux/themeSlice";
 
 const InputForAdd = () => {
     const [value, setValue] = useState<string>("");
     const dispatch = useDispatch();
+    const isDarkTheme = useSelector(getTheme)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
@@ -35,8 +37,8 @@ const InputForAdd = () => {
                 value={value}
                 onChange={handleChange}
             />
-            <button className={`text-lightPrimary`} onClick={handleAddTodo}>
-            <MdOutlineAddCircleOutline size={22} className="text-lightSecondary" />
+            <button onClick={handleAddTodo}>
+            <MdOutlineAddCircleOutline size={22} className={`${isDarkTheme ? "text-darkSecondary" : "text-lightSecondary"}`} />
             </button>
         </div>
     );
