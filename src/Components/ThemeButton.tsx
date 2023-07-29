@@ -13,7 +13,7 @@ const ThemeButton = () => {
     return (
         
         < button onClick={ chengeTheme }>{
-            isDarkTheme ? <BiSun /> : <MdNightsStay className="text-lightSecondary" />
+            isDarkTheme ? <BiSun size={22} /> : <MdNightsStay size={22} className="text-lightSecondary" />
         }</button >
     )
 }

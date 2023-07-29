@@ -1,7 +1,7 @@
 import React from "react";
 import { CheckboxProps } from "../types";
 import { BsCheck2Square } from "react-icons/bs"
-import { CiViewTimeline } from "react-icons/ci"
+import { BiCheckbox } from "react-icons/bi"
 
 const Checkbox: React.FC<CheckboxProps> = ({ completed, onCompleted }) => {
     return (
@@ -13,7 +13,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ completed, onCompleted }) => {
                 className={`appearance-none`}
             />
             {completed ?
-                <BsCheck2Square className="text-green-500" /> : <CiViewTimeline className="text-red-500" />
+                <BsCheck2Square size={22} className="text-green-500" /> : <BiCheckbox size={22} className="text-gray-900" />
             }
         </label>
     )

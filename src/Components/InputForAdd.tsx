@@ -21,7 +21,7 @@ const InputForAdd = () => {
 
     const handleAddTodo = () => {
         if (value.length === 0) {
-            alert("Строка пуста");
+            return
         } else {
             dispatch(addTask(value));
             setValue("");
@@ -36,7 +36,7 @@ const InputForAdd = () => {
                 onChange={handleChange}
             />
             <button className={`text-lightPrimary`} onClick={handleAddTodo}>
-            <MdOutlineAddCircleOutline className="text-lightSecondary" />
+            <MdOutlineAddCircleOutline size={22} className="text-lightSecondary" />
             </button>
         </div>
     );
