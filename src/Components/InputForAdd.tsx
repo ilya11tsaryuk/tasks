@@ -32,7 +32,7 @@ const InputForAdd = () => {
     return (
         <div className={`w-full px-5 pb-7 flex justify-around`}>
             <input
-            className={`w-11/12 p-1 rounded-lg outline-none`}
+            className={`w-11/12 p-1 rounded-lg outline-none bg-white`}
                 onKeyDown={handleKeyDown}
                 value={value}
                 onChange={handleChange}
