@@ -36,16 +36,18 @@ const Container = () => {
     };
 
     return (
-        <div className={`w-full md:w-4/5 lg:w-3.5 m-auto`}>
+        <div className={`w-full ${isDarkTheme ? "bg-darkBackground" : "bg-lightBC"} pb-1`}>
             <div className={`${isDarkTheme ? "bg-darkPrimary" : "bg-lightPrimary"}`}>
-                <div className={`flex justify-between items-center  pt-10 px-5 pb-5`}>
-                    <div className={`w-2/5 text-start pl-2 text-2xl font-bold ${isDarkTheme ? "text-darkSecondary" : "text-lightSecondary"}`}>Todo List</div>
-                    <div className={`flex justify-around w-1/2`}>
-                        <SelectFilter defaultVal={filter} filterTodo={filterTodo} />
-                        <ThemeButton />
+                <div className={`m-auto md:w-4/5 lg:w-3/5`}>
+                    <div className={`flex justify-between items-center  pt-10 px-5 pb-5`}>
+                        <div className={`w-2/5 text-start pl-2 text-2xl font-bold ${isDarkTheme ? "text-darkSecondary" : "text-lightSecondary"}`}>Todo List</div>
+                        <div className={`flex justify-around w-1/2`}>
+                            <SelectFilter defaultVal={filter} filterTodo={filterTodo} />
+                            <ThemeButton />
+                        </div>
                     </div>
+                    <InputForAdd />
                 </div>
-                <InputForAdd />
             </div>
             <TodoList todos={filteredTasks} />
         </div>
